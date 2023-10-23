@@ -1,4 +1,4 @@
-# Ksh process , functions and errors
+# Ksh process , functions, parallel and errors
 
 Folder ksh: contains ksh files
 Folder log: store excutions loggs
@@ -23,3 +23,6 @@ Error handler in step2.ksh
     exit 1
     echo >&2 "Message Error!!!!"
 ```
+
+Parallel processes submited in **step3.ksh** usin **&** and **wait**
+
