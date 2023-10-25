@@ -9,13 +9,14 @@ Change to **ksh** folder
 cd ksh
 ```
 
-Execute ksh usin ksh filename:
+Execute ksh using ksh filename:
 
 ```cmd
 ksh step1.ksh
 ```
 
-Add logger.ksh for logging and use in step1.ksh
+## Use ksh logger
+Add logger.ksh for logging and use in step2.ksh
 
 Error handler in step2.ksh
 
@@ -26,3 +27,6 @@ Error handler in step2.ksh
 
 Parallel processes submited in **step3.ksh** usin **&** and **wait**
 
+## Error handler sql
+
+In step4.ksh, set Db parameters, and handle database error

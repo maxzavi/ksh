@@ -1,17 +1,18 @@
-process_name=step4
-process_name_log=${process_name}_`date +%Y%m%d`_`date +%H%M%S`.log
+process_name=step3
+log_dir=../log/
+process_log=${log_dir}${process_name}_`date +%Y%m%d`_`date +%H%M%S`.log
+
 execute(){
     substep=$1
     sleep_time_seconds=$2
-    ksh logger.ksh ${process_name_log} "Start substep ${substep}"
+    echo "`date +%Y/%m/%d`_`date +%H:%M:%S` Start substep ${substep}" | tee ${process_log}
     sleep ${sleep_time_seconds}
-    ksh logger.ksh ${process_name_log} "End substep ${substep}"
+    echo "`date +%Y/%m/%d`_`date +%H:%M:%S` End substep ${substep}" | tee ${process_log}
 }
-
-ksh logger.ksh ${process_name_log} "Start process ${process_name}" 1
+echo "`date +%Y/%m/%d`_`date +%H:%M:%S` Start " | tee ${process_log}
+echo "`date +%Y/%m/%d`_`date +%H:%M:%S` Process ..." | tee ${process_log}
 execute "substep1" 10 &
 execute "substep2" 5 &
 execute "substep3" 8 &
 wait
-
-ksh logger.ksh ${process_name_log} "End"
+echo "`date +%Y/%m/%d`_`date +%H:%M:%S` End" | tee -a ${process_log}
